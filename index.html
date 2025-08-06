@@ -1,57 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Digital Tickets</title>
-		<meta charset="utf-8">
-		<meta name="generator" content="Three.js Editor">
-		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-		<style>
-			body {
-				font-family: sans-serif;
-				font-size: 11px;
-				background-color: #000;
-				margin: 0px;
-			}
-			canvas {
-				display: block;
-			}
-		</style>
-	</head>
-	<body ontouchstart="">
-		<script type="importmap">
-			{
-				"imports": {
-					"three": "./js/three.module.js"
-				}
-			}
-		</script>
-		<script type="module">
-
-			import * as THREE from 'three';
-			import { APP } from './js/app.js';
-
-			window.THREE = THREE; // Used by APP Scripts.
-
-			var loader = new THREE.FileLoader();
-			loader.load( 'app.json', function ( text ) {
-
-				var player = new APP.Player();
-				player.load( JSON.parse( text ) );
-				player.setSize( window.innerWidth, window.innerHeight );
-				player.play();
-
-				document.body.appendChild( player.dom );
-
-				window.addEventListener( 'resize', function () {
-
-					player.setSize( window.innerWidth, window.innerHeight );
-
-				} );
-
-			} );
-
-
-
-		</script>
-	</body>
+<!doctype html>
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover' />
+    <meta charset='utf-8'>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <style></style>
+    <title>Blank Project</title>
+    <script src="playcanvas-stable.min.js"></script>
+    <script src="__settings__.js"></script>
+</head>
+<body>
+    <script src="__start__.js"></script>
+    <script src="__loading__.js"></script>
+</body>
 </html>
